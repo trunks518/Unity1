@@ -49,7 +49,7 @@ TextureImporter:
         width: 71
         height: 71
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
     - name: SpriteSheet_1
       rect:
         serializedVersion: 2
@@ -58,7 +58,7 @@ TextureImporter:
         width: 72
         height: 71
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
     - name: SpriteSheet_2
       rect:
         serializedVersion: 2
@@ -67,7 +67,7 @@ TextureImporter:
         width: 72
         height: 71
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
     - name: SpriteSheet_3
       rect:
         serializedVersion: 2
@@ -76,6 +76,15 @@ TextureImporter:
         width: 72
         height: 71
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
+    - name: SpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 862
+        y: 65
+        width: 51
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
   spritePackingTag: 
   userData: 

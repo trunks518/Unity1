@@ -9,16 +9,17 @@
 var Speed : float;
 
 ////////Animations///////////
-var Idle : Animation;
-var WalkFront : Animation;
-var WalkLeft : Animation;
-var WalkRight : Animation;
-var WalkBack : Animation;
+var PlayerAnimation : Animator;
 ///////End Animations/////////
 
 function Awake() 
 {
-	animation.Play("Idle");
+	PlayerAnimation = GetComponent(Animator);
+	PlayerAnimation.SetInteger("Idle", 1);
+	PlayerAnimation.SetInteger("WalkUp", 0);
+	PlayerAnimation.SetInteger("WalkDown", 0);
+	PlayerAnimation.SetInteger("WalkLeft", 0);
+	PlayerAnimation.SetInteger("WalkRight", 0);
 }
 
 function Update() 
@@ -27,26 +28,35 @@ function Update()
 	if(Input.GetKey(KeyCode.UpArrow))
 	{
 		transform.position.y += 1 * Time.deltaTime * Speed;
-		animation.Play("WalkFront", PlayMode.StopAll);
+		PlayerAnimation.SetInteger("Idle", 0);
+		PlayerAnimation.SetInteger("WalkUp", 2);
+
 	}
 	if(Input.GetKey(KeyCode.DownArrow))
 	{
 		transform.position.y -= 1 * Time.deltaTime * Speed;
-		animation.Play("WalkBack", PlayMode.StopAll);
+		PlayerAnimation.SetInteger("Idle", 0);
+		PlayerAnimation.SetInteger("WalkDown", 3);
 	}
 	if(Input.GetKey(KeyCode.LeftArrow))
 	{
 		transform.position.x -= 1 * Time.deltaTime * Speed;
-		animation.Play("WalkLeft", PlayMode.StopAll);
+		PlayerAnimation.SetInteger("Idle", 0);
+		PlayerAnimation.SetInteger("WalkLeft", 4);
 	}
 	if(Input.GetKey(KeyCode.RightArrow))
 	{
 		transform.position.x += 1 * Time.deltaTime * Speed;
-		animation.Play("WalkRight", PlayMode.StopAll);
+		PlayerAnimation.SetInteger("Idle", 0);
+		PlayerAnimation.SetInteger("WalkRight", 5);
 	}
 	else
 	{
-		animation.Play("Idle", PlayMode.StopAll);
+		PlayerAnimation.SetInteger("Idle", 1);
+		PlayerAnimation.SetInteger("WalkUp", 0);
+		PlayerAnimation.SetInteger("WalkDown", 0);
+		PlayerAnimation.SetInteger("WalkLeft", 0);
+		PlayerAnimation.SetInteger("WalkRight", 0);
 	}
 	
 }

@@ -23,6 +23,25 @@ function Update()
 
 function BuildChunk()
 {
+	var Chunk = Random.Range(0, Tiles.length);
+	var theTile : GameObject;
+	if(Chunk == 0)
+	{
+		theTile = Tiles[0];
+	}
+	if(Chunk == 1)
+	{
+		theTile = Tiles[1];
+	}
+	if(Chunk == 2)
+	{
+		theTile = Tiles[2];
+	}
+	if(Chunk == 3)
+	{
+		theTile = Tiles[3];
+	}
+	
 	var MaxY = Mathf.CeilToInt(Camera.main.orthographicSize) * 2;
 	var MaxX = Mathf.CeilToInt(Screen.width / Screen.height * MaxY) * 2;
 
@@ -30,7 +49,7 @@ function BuildChunk()
 	{
 		for(var y = Mathf.FloorToInt(Camera.main.transform.position.y) - MaxY / 2; y < Mathf.CeilToInt(MaxY / 2) + 1; y++)  // Calculates the Screen y size
 		{
-			var go = gameObject.Instantiate(Tile);
+			var go = gameObject.Instantiate(theTile);
 			go.transform.position = new Vector3(x, y, 0);
 			go.name = "X: " + x + ", Y: " + y;
 			TotalTiles ++;
