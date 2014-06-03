@@ -9,16 +9,11 @@
 var Tile : GameObject;   //For debugging only!
 var Tiles : GameObject[];
 var CameraSpeed : float;
-public var TotalTiles : int;
+public var TotalTiles : int = 0;
 
 function Start() 
 {
 	BuildChunk();
-}
-
-function Update() 
-{
-
 }
 
 function BuildChunk()
@@ -42,6 +37,7 @@ function BuildChunk()
 		theTile = Tiles[3];
 	}
 	
+	var n = 0;
 	var MaxY = Mathf.CeilToInt(Camera.main.orthographicSize) * 2;
 	var MaxX = Mathf.CeilToInt(Screen.width / Screen.height * MaxY) * 2;
 
@@ -49,9 +45,10 @@ function BuildChunk()
 	{
 		for(var y = Mathf.FloorToInt(Camera.main.transform.position.y) - MaxY / 2; y < Mathf.CeilToInt(MaxY / 2) + 1; y++)  // Calculates the Screen y size
 		{
-			var go = gameObject.Instantiate(theTile);
+			var go : GameObject = GameObject.Instantiate(theTile);
 			go.transform.position = new Vector3(x, y, 0);
-			go.name = "X: " + x + ", Y: " + y;
+			n++;
+			go.name = "Tile" + n;
 			TotalTiles ++;
 		}
 	}

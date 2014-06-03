@@ -1,10 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerMovement.js">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Tiles\Grass.js">
     <Files>
-      <File FileName="Assets\Scripts\PlayerMovement.js" Line="23" Column="2" />
-      <File FileName="Assets\Scripts\PlayerMovement.js" Line="32" Column="12" />
-      <File FileName="Assets\Scripts\MapStuff\TileGenerator.js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\MapStuff\TileGenerator.js" Line="15" Column="2" />
+      <File FileName="Assets\Scripts\Tiles\Dirt.js" Line="6" Column="1" />
+      <File FileName="Assets\Scripts\Tiles\Grass.js" Line="20" Column="2" />
+      <File FileName="Assets\Scripts\Player\PlayerStats.js" Line="9" Column="2" />
+      <File FileName="Assets\Scripts\Items\Sword.js" Line="5" Column="2" />
+      <File FileName="Assets\Scripts\Player\PlayerMovement.js" Line="15" Column="18" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
