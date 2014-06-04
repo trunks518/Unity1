@@ -1,10 +1,10 @@
 ﻿#pragma strict
-/************************************
-*		Tile Generator				*
-*	By: Justin Howell / Quill18		*
-*	Date: June 01, 2014 : 1335		*
-*									*
-************************************/
+		/************************************
+		*		Tile Generator				*
+		*	By: Justin Howell / Quill18		*
+		*	Date: June 01, 2014 : 1335		*
+		*									*
+		************************************/
 
 var Tile : GameObject;   //For debugging only!
 var Tiles : GameObject[];

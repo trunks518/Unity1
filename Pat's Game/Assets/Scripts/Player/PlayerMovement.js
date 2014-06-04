@@ -10,15 +10,17 @@ var Speed : float;
 var WalkSpeed : float;
 var RunSpeed : float;
 var PlayerAnimation : Animator;
+var Stats : PlayerStats;
 
 
 function Awake() 
 {
+	Stats = GetComponent(PlayerStats);
 	PlayerAnimation = GetComponent(Animator);
 	PlayerAnimation.SetBool("Idle", true);
 }
 
-function Update() 
+function FixedUpdate() 
 {
 	if(Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
 	{
@@ -77,11 +79,26 @@ function Update()
 	
 	if(Input.GetKey(KeyCode.LeftShift))
 	{
-		Speed = RunSpeed;
+		if(Stats.Cfatigue >= 0)
+		{
+			Speed = RunSpeed;
+			Stats.Cfatigue -= 1 * Time.deltaTime;
+		}
+		if(Stats.Cfatigue <= 0)
+		{
+			Stats.Cfatigue = 0;
+			Speed = WalkSpeed;
+		}
 	}
 	
 	else
-	{
+	{	
 		Speed = WalkSpeed;
+		Stats.Cfatigue += 1 * Time.deltaTime;
+			
+		if(Stats.Cfatigue >= Stats.Fatigue)
+		{
+			Stats.Cfatigue = Stats.Fatigue;
+		}
 	}
 }
