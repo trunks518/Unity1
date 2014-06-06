@@ -1,0 +1,15 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemies\EnemyAI.js">
+    <Files>
+      <File FileName="Assets\Scripts\Enemies\EnemyAI.js" Line="25" Column="17" />
+      <File FileName="Assets\Scripts\Tiles\Grass.js" Line="12" Column="1" />
+      <File FileName="Assets\Scripts\Player\PlayerMovement.js" Line="27" Column="28" />
+      <File FileName="Assets\Scripts\Player\PlayerStats.js" Line="18" Column="28" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
