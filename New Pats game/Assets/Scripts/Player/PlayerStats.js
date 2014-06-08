@@ -15,10 +15,8 @@
 	var _hp : GUIText;
 	var _atk : GUIText;
 	var _cFatigue : GUIText;
-	var ShowInventory = false;
 	/////////GUI End/////////
 		
-var Inventory : ArrayList;
 var Hp : float = 100.0f;
 var Atk : float = 1.0f;
 var Fatigue : float = 10.0f;
@@ -27,7 +25,6 @@ var Cfatigue : float;   ////Current Fatigue; goes Down while shift is pressed.
 function Awake() 
 {
 	Cfatigue = Fatigue;
-	Inventory = new ArrayList();
 }
 
 

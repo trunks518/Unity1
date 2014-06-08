@@ -11,25 +11,26 @@
 		*						   				*
 		****************************************/	
 
+var Speed : float = 3.0f;
+var HP : float = 10.0f;
+
 var _player : GameObject[];
 var LookRange : float = 3.0f;
 var AgroRange : float = 2.0f;
 var AtkRange : float = 0.25;
 var MinRange : float = 0.10f;
 var rot : Quaternion;
-
-var Speed : float = 3.0f;
-var HP : float = 10.0f;
-
+var WaitTime : float = 40.0f;
+public var _time : float;
 
 function Start()
 {
 	rot = Quaternion.identity;
 }
 
-function FixedUpdate()
+function Update()
 {
-	transform.rotation = rot;
+	_time += Time.deltaTime;
 	
 	_player = gameObject.FindGameObjectsWithTag("Player");
 
@@ -56,9 +57,15 @@ function FixedUpdate()
 			//Debug.Log("Move to the player in range.");
 		}
 		
-		else
-		{
-			//Do Nothing!
+		if(distance < LookRange)
+		{			
+			if(_time > WaitTime)
+			{
+				var _dir = Random.insideUnitCircle * LookRange * 10;
+				rigidbody2D.AddForce(_dir * Speed);
+				_time = 0;
+			}
+			//Debug.Log(_dir);
 		}
 	}
 }

@@ -9,11 +9,23 @@ function OnTriggerEnter2D(col : Collider2D)
 	if(col.tag == "Player")
 	{
 		//Debug.Log("Picked up a sword!");
-		col.GetComponent(PlayerStats).Inventory.Add(this.gameObject);
+		for(var i = 0; i < col.GetComponent(InventorySys).Inventory.length; i++)
+		{
+			//Debug.Log("Looping through the Inventory.");
+		
+			if(col.GetComponent(InventorySys).Inventory[i] == null)
+			{
+				//Debug.Log("Found a null Inventory slot!");				
+				col.GetComponent(InventorySys).Inventory[i] = this.gameObject.name;
+				break;
+			}
+		}
+		
 		_player = col.gameObject;
 		//Debug.Log(_player.name);
+		Destroy(this.gameObject);
 	}
-	gameObject.SetActive(false);;
+	
 }
 
 function Equip()

@@ -1,12 +1,30 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemies\EnemyAI.js">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemies\EnemyWalkAnimation.js">
     <Files>
-      <File FileName="Assets\Scripts\Enemies\EnemyAI.js" Line="25" Column="17" />
-      <File FileName="Assets\Scripts\Tiles\Grass.js" Line="12" Column="1" />
-      <File FileName="Assets\Scripts\Player\PlayerMovement.js" Line="27" Column="28" />
-      <File FileName="Assets\Scripts\Player\PlayerStats.js" Line="18" Column="28" />
+      <File FileName="Assets\Scripts\Player\PlayerMovement.js" Line="115" Column="2" />
+      <File FileName="Assets\Scripts\Enemies\EnemyAI.js" Line="51" Column="1" />
+      <File FileName="Assets\Scripts\MapStuff\TileGenerator.js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player\PlayerStats.js" Line="27" Column="21" />
+      <File FileName="Assets\Scripts\Items\Sword.js" Line="4" Column="30" />
+      <File FileName="Assets\Scripts\Player\InventorySys.js" Line="7" Column="17" />
+      <File FileName="Assets\Scripts\Tiles\Dirt.js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Enemies\EnemyWalkAnimation.js" Line="16" Column="25" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="Assembly-UnityScript" expanded="True">
+            <Node name="Scripts" expanded="True">
+              <Node name="Enemies" expanded="True">
+                <Node name="EnemyWalkAnimation.js" selected="True" />
+              </Node>
+              <Node name="Player" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

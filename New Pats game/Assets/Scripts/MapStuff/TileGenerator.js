@@ -9,10 +9,11 @@
 var Tile : GameObject;   //For debugging only!
 var Tiles : GameObject[];
 var CameraSpeed : float;
-public var TotalTiles : int = 0;
+var TotalTiles : ArrayList;
 
 function Awake() 
 {
+	TotalTiles = new ArrayList();
 	BuildChunk();
 }
 
@@ -49,7 +50,9 @@ function BuildChunk()
 			go.transform.position = new Vector3(x, y, 0);
 			n++;
 			go.name = "Tile" + n;
-			TotalTiles ++;
+			TotalTiles.Add(go.gameObject);
 		}
 	}
+	
+	//Debug.Log("Total Tiles in scene: " + TotalTiles.Count);
 }

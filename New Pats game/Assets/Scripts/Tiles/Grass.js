@@ -16,5 +16,6 @@ function SpawnItem()
 	{
 		var go : GameObject = GameObject.Instantiate(Items[0]);
 		go.transform.position = Position;
+		go.name = Items[0].name;
 	}
 }
