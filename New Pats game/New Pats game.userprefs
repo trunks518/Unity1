@@ -1,23 +1,21 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemies\EnemyWalkAnimation.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\NPCStuff\ShopKeep.js">
     <Files>
-      <File FileName="Assets\Scripts\Player\PlayerMovement.js" Line="115" Column="2" />
-      <File FileName="Assets\Scripts\Enemies\EnemyAI.js" Line="51" Column="1" />
-      <File FileName="Assets\Scripts\MapStuff\TileGenerator.js" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player\PlayerStats.js" Line="27" Column="21" />
-      <File FileName="Assets\Scripts\Items\Sword.js" Line="4" Column="30" />
+      <File FileName="Assets\Scripts\NPCStuff\ShopKeep.js" Line="21" Column="28" />
+      <File FileName="Assets\Scripts\Player\PlayerMovement.js" Line="29" Column="28" />
+      <File FileName="Assets\Scripts\Enemies\EnemyAI.js" Line="29" Column="17" />
+      <File FileName="Assets\Scripts\Player\PlayerStats.js" Line="27" Column="20" />
       <File FileName="Assets\Scripts\Player\InventorySys.js" Line="7" Column="17" />
-      <File FileName="Assets\Scripts\Tiles\Dirt.js" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemies\EnemyWalkAnimation.js" Line="16" Column="25" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="Assembly-UnityScript" expanded="True">
             <Node name="Scripts" expanded="True">
-              <Node name="Enemies" expanded="True">
-                <Node name="EnemyWalkAnimation.js" selected="True" />
+              <Node name="Enemies" expanded="True" />
+              <Node name="NPCStuff" expanded="True">
+                <Node name="ShopKeep.js" selected="True" />
               </Node>
               <Node name="Player" expanded="True" />
             </Node>

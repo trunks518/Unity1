@@ -9,7 +9,10 @@
 		*	Inventory Items.	   				*
 		*						   				*
 		*						   				*
-		****************************************/		
+		****************************************/
+		
+@script RequireComponent(Rigidbody2D)
+@script RequireComponent(BoxCollider2D)
 
 	////////GUI Start////////
 	var _hp : GUIText;
@@ -21,6 +24,7 @@ var Hp : float = 100.0f;
 var Atk : float = 1.0f;
 var Fatigue : float = 10.0f;
 var Cfatigue : float;   ////Current Fatigue; goes Down while shift is pressed.
+var IsBusy = false;
 
 function Awake() 
 {

@@ -1,4 +1,5 @@
 ﻿#pragma strict
+@script RequireComponent(Animator)
 
 var anim : Animator;
 var rot : Quaternion;

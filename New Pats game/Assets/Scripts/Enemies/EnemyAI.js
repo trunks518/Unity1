@@ -10,6 +10,9 @@
 		*						   				*
 		*						   				*
 		****************************************/	
+		
+@script RequireComponent(Rigidbody2D)
+@script RequireComponent(BoxCollider2D)
 
 var Speed : float = 3.0f;
 var HP : float = 10.0f;
