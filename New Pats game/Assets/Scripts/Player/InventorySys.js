@@ -8,3 +8,8 @@ function Awake()
 {
 	Inventory = new String[Isize];
 }
+
+function Update()
+{
+
+}

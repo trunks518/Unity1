@@ -16,23 +16,38 @@
 
 var Speed : float = 3.0f;
 var HP : float = 10.0f;
+var aWeapon : GameObject;
+
 
 var _player : GameObject[];
+var WeaponList : GameObject[];
+
+/////////////Look and movement vars////////////////////////
 var LookRange : float = 3.0f;
 var AgroRange : float = 2.0f;
 var AtkRange : float = 0.25;
 var MinRange : float = 0.10f;
 var rot : Quaternion;
-var WaitTime : float = 40.0f;
+/////////End look and movement vars////////////////////////
+
+////////////Timers//////////////
+var WaitTime : float = 40.0f; 
+var attackTimer = 3;
 public var _time : float;
+////////End timers//////////////
 
 function Start()
 {
+	//var w;
 	rot = Quaternion.identity;
+	//w = Random.Range(0, WeaponList.length);
+	//aWeapon = WeaponList[w];
+	
 }
 
 function Update()
 {
+	transform.rotation = rot;
 	_time += Time.deltaTime;
 	
 	_player = gameObject.FindGameObjectsWithTag("Player");
@@ -44,31 +59,49 @@ function Update()
 		var Ty = _player[p].transform.position.y - transform.position.y; ///Calaulates the y position
 		var dir = new Vector2(Tx, Ty);
 		
-		if(distance <= LookRange)
+		if(distance <= LookRange) ////Player in range
 		{
 			//Debug.Log("I can see a player.");
 		}
 		
-		if(distance <= AgroRange && distance > MinRange)
+		if(distance <= AgroRange && distance > MinRange) ////Move enemy to the player
 		{		
 			rigidbody2D.AddForce(dir * Speed);	
 			//Debug.Log("Move to the player in range.");
 		}
 		
-		if(distance >= AtkRange)
+		if(distance <= AtkRange)
 		{			
-			//Debug.Log("Move to the player in range.");
+			Attack();
 		}
 		
-		if(distance < LookRange)
+		if(distance > LookRange)
 		{			
 			if(_time > WaitTime)
 			{
 				var _dir = Random.insideUnitCircle * LookRange * 10;
 				rigidbody2D.AddForce(_dir * Speed);
+				
 				_time = 0;
 			}
 			//Debug.Log(_dir);
 		}
 	}
 }
+
+function Attack()
+{
+	if(attackTimer < _time)
+	{
+		for(var p = 0; p < _player.length; p++)
+		{
+			_player[p].GetComponent(PlayerStats).Hp -= aWeapon.GetComponent(Weapon).atkP;
+			_player[p].GetComponent(PlayerStats).Hit();
+		}
+		
+		_time = 0;
+		
+	}
+	//Debug.Log("_time: " + _time);
+}
+
