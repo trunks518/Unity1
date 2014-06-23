@@ -14,53 +14,48 @@ function Update()
 {
 	transform.rotation = rot;
 
-	if(transform.position.y)
+	if(rigidbody2D.velocity.y > 0.1)
 	{
 		anim.SetBool("WalkUp", true);
+		anim.SetBool("WalkDown", false);
+		anim.SetBool("WalkLeft", false);
+		anim.SetBool("WalkRight", false);
 		anim.SetBool("Idle", false);
 	}
 	
-	else
-	{
-		anim.SetBool("WalkUp", false);
-		anim.SetBool("Idle", true);
-	}
-	
-	if(Input.GetKey(KeyCode.DownArrow))
+	if(rigidbody2D.velocity.y < -0.1)
 	{
 		anim.SetBool("WalkDown", true);
-		anim.SetBool("Idle", false);
-	}
-	
-	else
-	{
-		anim.SetBool("Idle", true);
-		anim.SetBool("WalkDown", false);
-		
-	}
-	
-	if(Input.GetKey(KeyCode.LeftArrow))
-	{
-		anim.SetBool("WalkLeft", true);
-		anim.SetBool("Idle", false);
-	}
-	
-	else
-	{
-		anim.SetBool("Idle", true);
+		anim.SetBool("WalkUp", false);
 		anim.SetBool("WalkLeft", false);
-		
+		anim.SetBool("WalkRight", false);
+		anim.SetBool("Idle", false);
 	}
 	
-	if(Input.GetKey(KeyCode.RightArrow))
+	if(rigidbody2D.velocity.x < -0.1)
 	{
+		anim.SetBool("WalkUp", false);
+		anim.SetBool("WalkDown", false);
+		anim.SetBool("WalkLeft", true);
+		anim.SetBool("WalkRight", false);
+		anim.SetBool("Idle", false);
+	}
+	
+	if(rigidbody2D.velocity.x > 0.1)
+	{
+		anim.SetBool("WalkUp", false);
+		anim.SetBool("WalkDown", false);
+		anim.SetBool("WalkLeft", false);
 		anim.SetBool("WalkRight", true);
 		anim.SetBool("Idle", false);
 	}
 	
-	else
+	else if(rigidbody2D.velocity.x == 0 && rigidbody2D.velocity.y == 0 )
 	{
 		anim.SetBool("Idle", true);
+		anim.SetBool("WalkUp", false);
+		anim.SetBool("WalkDown", false);
+		anim.SetBool("WalkLeft", false);
 		anim.SetBool("WalkRight", false);
 	}
 }

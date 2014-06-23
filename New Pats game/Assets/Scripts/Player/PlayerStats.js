@@ -30,11 +30,19 @@ var Atk : float = 1.0f;
 var Fatigue : float = 10.0f;
 var Cfatigue : float;   ////Current Fatigue; goes Down while shift is pressed.
 var IsBusy = false;
+
 var PlayerWeapon : GameObject;
+var PlayerAnimation : Animator;
 
 function Awake() 
 {
 	Cfatigue = Fatigue;
+	
+	if(PlayerAnimation == null)
+	{
+		Debug.LogError("Did not find Animator for attacking!");
+		PlayerAnimation = GetComponent(Animator);
+	}
 }
 
 
@@ -80,11 +88,22 @@ function OnGUI()
 
 function Attack()
 {
-	Instantiate(PlayerWeapon, transform.position, transform.rotation);
-	Debug.Log("Attacking!");
+	var Enemy : Collider2D = Physics2D.OverlapCircle(transform.position, 5.0f);
+	var distance = Vector2.Distance(Enemy.transform.position, transform.position);
+	
+	if(Enemy.tag == "Enemy" && distance <= 1.0f)
+	{
+		Debug.Log("Attacking " + Enemy.name);
+		Enemy.GetComponent(EnemyAI).Hp -= Atk;
+	}
+	
+	else
+	{
+		return;
+	}
 }
 
-function Hit()
+function Hit() /////////////////////Add the effects of getting hit here!!  ////////////////////////////////////////////
 {
 	yield WaitForSeconds(0.1);
 }

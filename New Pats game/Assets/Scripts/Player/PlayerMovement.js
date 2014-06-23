@@ -1,4 +1,4 @@
-﻿#pragma strict
+#pragma strict
 /********************************
 *  		Player Movement		    *
 *  Created by: Justin Howell    *
@@ -22,11 +22,6 @@ var DirtSound : AudioClip;
 var SandSound : AudioClip;
 
 
-function Awake()
-{
-	PlayerAnimation.SetBool("IdleDown", true);
-}
-
 function Start() 
 {
 	if(PlayerAnimation == null || Stats == null)
@@ -36,6 +31,7 @@ function Start()
 		Stats = GetComponent(PlayerStats);
 		PlayerAnimation = GetComponent(Animator);
 	}
+	
 	rot = Quaternion.identity;
 }
 
@@ -137,7 +133,7 @@ function Update()
 		}
 		
 		else
-		{	
+		{			
 			Speed = WalkSpeed;
 			Stats.Cfatigue += 1 * Time.deltaTime;
 				

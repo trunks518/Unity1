@@ -15,7 +15,7 @@
 @script RequireComponent(BoxCollider2D)
 
 var Speed : float = 3.0f;
-var HP : float = 10.0f;
+var Hp : float = 10.0f;
 var aWeapon : GameObject;
 
 
@@ -27,7 +27,6 @@ var LookRange : float = 3.0f;
 var AgroRange : float = 2.0f;
 var AtkRange : float = 0.25;
 var MinRange : float = 0.10f;
-var rot : Quaternion;
 /////////End look and movement vars////////////////////////
 
 ////////////Timers//////////////
@@ -39,7 +38,6 @@ public var _time : float;
 function Start()
 {
 	//var w;
-	rot = Quaternion.identity;
 	//w = Random.Range(0, WeaponList.length);
 	//aWeapon = WeaponList[w];
 	
@@ -47,7 +45,6 @@ function Start()
 
 function Update()
 {
-	transform.rotation = rot;
 	_time += Time.deltaTime;
 	
 	_player = gameObject.FindGameObjectsWithTag("Player");
@@ -79,13 +76,18 @@ function Update()
 		{			
 			if(_time > WaitTime)
 			{
-				var _dir = Random.insideUnitCircle * LookRange * 10;
-				rigidbody2D.AddForce(_dir * Speed);
+				var _dir = Random.insideUnitCircle * LookRange * 150;
+				rigidbody2D.AddForce(_dir - transform.position * Speed);
 				
 				_time = 0;
 			}
 			//Debug.Log(_dir);
 		}
+	}
+	
+	if(Hp <= 0)
+	{
+		Destroy(this.gameObject, 0.1f);
 	}
 }
 
