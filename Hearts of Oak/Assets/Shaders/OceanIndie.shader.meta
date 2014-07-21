@@ -1,0 +1,6 @@
+fileFormatVersion: 2
+guid: 20222405c00c7624c94d4b95c4abe178
+ShaderImporter:
+  defaultTextures:
+  - _SkyBox: {fileID: 8900000, guid: db7d862e7ac194442b14435b109001bf, type: 2}
+  userData: 
